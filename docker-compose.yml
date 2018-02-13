@@ -1,0 +1,37 @@
+# v2 syntax
+version: '2'
+
+services:
+
+  mysql-plena:
+    image: ambientum/mysql:5.7
+    container_name: mysql-plena
+    volumes:
+      - ./.docker/mysql:/var/lib/mysql
+    ports:
+      - "3398:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=plena
+      - MYSQL_DATABASE=plena
+      - MYSQL_USER=plena
+      - MYSQL_PASSWORD=plena
+
+  apache-plena:
+    image: ambientum/php:7.1-apache
+    container_name: apache-plena
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "8098:8080"
+    links:
+      - mysql-plena
+
+#  queue-plena:
+#    image: nielsvdoorn/laravel-supervisor
+#    container_name: queue-plena
+#    volumes:
+#      - .:/var/www
+#    ports:
+#      - "8088:8080"
+#    links:
+#      - mysql-plena
