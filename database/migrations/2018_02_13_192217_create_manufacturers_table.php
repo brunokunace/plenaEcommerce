@@ -32,6 +32,7 @@ class CreateManufacturersTable extends Migration
             $table->string('complement')->nullable();
             $table->string('neighborhood')->nullable();
             $table->string('city')->nullable();
+            $table->string('state')->nullable();
             $table->string('email')->nullable();
             $table->string('commercial_phone')->nullable();
             $table->string('home_phone')->nullable();
