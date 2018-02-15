@@ -56,7 +56,7 @@ class ResourceController extends Controller
      */
     public function index(Request $request)
     {
-        $data = $this->repository->latest($this->limit)->paginate($this->offset);
+        $data = $this->repository->latest($this->limit, $this->offset);
         return view("{$this->domain}.index", compact('data'))
             ->with('i', ($request->input('page', 1) - 1) * $this->offset);
     }

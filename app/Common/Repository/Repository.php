@@ -258,6 +258,7 @@ abstract class Repository
         }
         return true;
     }
+
     /**
      * @param $message
      * @return string
@@ -276,12 +277,21 @@ abstract class Repository
 
         return implode("",array_intersect_key($messages, array_flip($message)));
     }
+
     /**
      * @param $limit
+     * @param @offset
      * @return mixed
      */
-    public function latest($limit)
+    public function latest($limit, $offset)
     {
-        return $this->model->latest()->paginate($limit);
+        return $this->model->latest($limit)->paginate($offset);
+    }
+
+    /**
+     * @return array
+     */
+    public function validates() {
+        return [];
     }
 }
