@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
-
 /**
  * Class ResourceController
  * @package App\Http\Content\Controllers
@@ -50,7 +49,6 @@ class ResourceController extends Controller
 
     /**
      * Display a listing of the resource.
-     * @param $limit int
      * @param  Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -61,7 +59,6 @@ class ResourceController extends Controller
             ->with('i', ($request->input('page', 1) - 1) * $this->offset);
     }
 
-
     /**
      * Show the form for creating a new resource.
      *
@@ -71,7 +68,6 @@ class ResourceController extends Controller
     {
         return view("{$this->domain}.create");
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -88,7 +84,6 @@ class ResourceController extends Controller
             ->with('success', $this->repository->message('store.success'));
     }
 
-
     /**
      * Display the specified resource.
      *
@@ -101,7 +96,6 @@ class ResourceController extends Controller
         return view("{$this->domain}.show", compact('data'));
     }
 
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -113,7 +107,6 @@ class ResourceController extends Controller
         $data = $this->repository->read($id);
         return view("{$this->domain}.edit", compact('data'));
     }
-
 
     /**
      * Update the specified resource in storage.
@@ -129,7 +122,6 @@ class ResourceController extends Controller
         return redirect()->route("{$this->domain}.index")
             ->with('success', $this->repository->message('update.success'));
     }
-
 
     /**
      * Remove the specified resource from storage.
