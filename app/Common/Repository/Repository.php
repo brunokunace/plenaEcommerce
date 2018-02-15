@@ -258,4 +258,30 @@ abstract class Repository
         }
         return true;
     }
+    /**
+     * @param $message
+     * @return string
+     */
+    public function message ($message) {
+        $messages = [
+            'create.success' => 'Criado com sucesso!',
+            'store.success' => 'Salvo com sucesso!',
+            'update.success' => 'Editado com sucesso!',
+            'destroy.success' => 'Apagado com sucesso!',
+            'create.error' => 'Erro ao criar!',
+            'store.error' => 'Erro ao salvar!',
+            'update.error' => 'Erro ao editar!',
+            'destroy.error' => 'Erro ao apagar!'
+        ];
+
+        return implode("",array_intersect_key($messages, array_flip($message)));
+    }
+    /**
+     * @param $limit
+     * @return mixed
+     */
+    public function latest($limit)
+    {
+        return $this->model->latest()->paginate($limit);
+    }
 }
