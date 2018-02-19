@@ -283,9 +283,18 @@ abstract class Repository
      * @param @offset
      * @return mixed
      */
-    public function latest($limit, $offset)
+    public function latest($offset)
     {
-        return $this->model->latest($limit)->paginate($offset);
+        return $this->model->latest()->paginate($offset);
+    }
+    /**
+     * @param $limit
+     * @param @offset
+     * @return mixed
+     */
+    public function properties()
+    {
+        return $this->model->getProperties();
     }
 
     /**

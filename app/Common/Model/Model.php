@@ -16,6 +16,15 @@ class Model extends EloquentModel
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
+        $this->fillable = $this->fieldsFillable();
+    }
+
+    public function getProperties() {
+        return $this->properties;
+    }
+
+    public function fieldsFillable() {
+        return array_diff_key(array_keys($this->properties), $this->guarded);
     }
 
 }
