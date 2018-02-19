@@ -9,12 +9,42 @@ class Category extends Model
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'active'
+    protected $guarded = ['id'];
+
+    protected $properties = [
+        'id' => [
+            'component' => null,
+            'label' => 'ID',
+            'options' => [
+                'id'    => 'id',
+                'class' => null,
+                'name'  => 'id',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ],
+        'name' => [
+            'component' => null,
+            'label' => 'Nome',
+            'options' => [
+                'id'    => 'name',
+                'class' => null,
+                'name'  => 'name',
+                'tagName'   => 'a',
+                'type'  => null
+            ]
+        ],
+        'active' => [
+            'component' => null,
+            'label' => 'Ativo',
+            'options' => [
+                'id'    => 'active',
+                'class' => 'active',
+                'name'  => 'active',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ]
     ];
+
 }

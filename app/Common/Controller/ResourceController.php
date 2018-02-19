@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Content\Controllers;
+namespace App\Common\Controller;
 
 use App\Common\Repository\Repository;
 use Illuminate\Http\Request;
@@ -29,22 +29,14 @@ class ResourceController extends Controller
     protected $offset;
 
     /**
-     * @var int
-     */
-    protected $limit;
-
-    /**
      * ResourceController constructor.
      * @param Repository $repository
      * @param $domain
      * @param $offset
      */
-    public function __construct(Repository $repository, $domain, $offset, $limit)
+    public function __construct(Repository $repository)
     {
         $this->repository = $repository;
-        $this->domain = $domain;
-        $this->offset = $offset;
-        $this->limit = $limit;
     }
 
     /**
@@ -54,8 +46,10 @@ class ResourceController extends Controller
      */
     public function index(Request $request)
     {
-        $data = $this->repository->latest($this->limit, $this->offset);
-        return view("{$this->domain}.index", compact('data'))
+        $data = $this->repository->latest($this->offset);
+        $properties = $this->repository->properties();
+        $domain = $this->domain;
+        return view("{$domain}.index", compact('data', 'domain', 'properties'))
             ->with('i', ($request->input('page', 1) - 1) * $this->offset);
     }
 
@@ -77,11 +71,11 @@ class ResourceController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate($this->repository->validates());
+       // $request->validate($this->repository->validates());
 
         $this->repository->create($request->all());
         return redirect()->route("{$this->domain}.index")
-            ->with('success', $this->repository->message('store.success'));
+            ->with('success', $this->repository->message(['store.success']));
     }
 
     /**
@@ -116,11 +110,11 @@ class ResourceController extends Controller
      */
     public function update($id, Request $request)
     {
-        $request->validate($this->repository->validates());
+        //$request->validate($this->repository->validates());
 
         $this->repository->update($id, $request->all());
         return redirect()->route("{$this->domain}.index")
-            ->with('success', $this->repository->message('update.success'));
+            ->with('success', $this->repository->message(['update.success']));
     }
 
     /**
