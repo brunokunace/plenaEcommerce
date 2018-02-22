@@ -60,7 +60,8 @@ class ResourceController extends Controller
      */
     public function create()
     {
-        return view("{$this->domain}.create");
+        $domain = $this->domain;
+        return view("{$this->domain}.create", compact('domain'));
     }
 
     /**
@@ -86,8 +87,9 @@ class ResourceController extends Controller
      */
     public function show($id)
     {
+        $domain = $this->domain;
         $data = $this->repository->read($id);
-        return view("{$this->domain}.show", compact('data'));
+        return view("{$this->domain}.show", compact('data', 'domain'));
     }
 
     /**
@@ -98,8 +100,9 @@ class ResourceController extends Controller
      */
     public function edit($id)
     {
+        $domain = $this->domain;
         $data = $this->repository->read($id);
-        return view("{$this->domain}.edit", compact('data'));
+        return view("{$this->domain}.create", compact('data', 'domain'));
     }
 
     /**

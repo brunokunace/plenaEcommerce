@@ -13,6 +13,7 @@ class Category extends Model
 
     protected $properties = [
         'id' => [
+            'showTable' => true,
             'component' => null,
             'label' => 'ID',
             'options' => [
@@ -24,6 +25,7 @@ class Category extends Model
             ]
         ],
         'name' => [
+            'showTable' => true,
             'component' => null,
             'label' => 'Nome',
             'options' => [
@@ -35,12 +37,37 @@ class Category extends Model
             ]
         ],
         'active' => [
+            'showTable' => true,
             'component' => null,
             'label' => 'Ativo',
             'options' => [
                 'id'    => 'active',
-                'class' => 'active',
+                'class' => null,
                 'name'  => 'active',
+                'tagName'   => 'span',
+                'type'  => 'boolean'
+            ]
+        ],
+        'featured' => [
+            'showTable' => true,
+            'component' => null,
+            'label' => 'Destacado',
+            'options' => [
+                'id'    => 'featured',
+                'class' => null,
+                'name'  => 'featured',
+                'tagName'   => 'span',
+                'type'  => 'boolean'
+            ]
+        ],
+        'class' => [
+            'showTable' => true,
+            'component' => null,
+            'label' => 'Classe',
+            'options' => [
+                'id'    => 'class',
+                'class' => null,
+                'name'  => 'class',
                 'tagName'   => 'span',
                 'type'  => null
             ]

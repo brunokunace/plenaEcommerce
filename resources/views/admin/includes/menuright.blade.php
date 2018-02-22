@@ -4,13 +4,13 @@
             <a class="nav-link" href="{{ route("{$domain}.create") }}">Incluir</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Excluir selecionados</a>
+            <a class="nav-link" href="#"><strike>Excluir selecionados</strike></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Imprimir selecionados</a>
+            <a class="nav-link" href="#"><strike>Imprimir selecionados</strike></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Exportar dados</a>
+            <a class="nav-link" href="#"><strike>Exportar dados</strike></a>
         </li>
     </ul>
 </div>
