@@ -15,7 +15,7 @@
 
                 @yield('contentForm')
 
-                <button class="btn btn-success botao_verde" type="submit" name="cadastrar_categoria">Enviar</button>
+                <button class="btn btn-success botao_verde" type="submit" name="enviar">Enviar</button>
                 </form>
             </div>
             @include('admin.includes.menuright')

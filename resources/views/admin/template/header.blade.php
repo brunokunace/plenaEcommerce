@@ -8,24 +8,17 @@
         <ul class="navbar-nav justified">
 
             <li class="nav-item">
-                <a class="nav-link" href="?link=1">Home</a>
+                <a class="nav-link" href="{{ route('admin.category.index') }}">Categorias</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?link=2">Categorias</a>
-            </li>
-
-
-            <li class="nav-item">
-                <a class="nav-link" href="?link=3">Produtos</a>
+                <a class="nav-link" href="{{ route('admin.product.index') }}">Produtos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?link=4">Fornecedores</a>
+                <a class="nav-link" href="{{ route('admin.manufacturer.index') }}">Fornecedores</a>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link" href="?link=10">Clientes</a>
+                <a class="nav-link" href="{{ route('admin.client.index') }}">Clientes</a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link" href="deslogar.php">Deslogar</a>
             </li>

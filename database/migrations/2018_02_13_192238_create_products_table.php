@@ -16,19 +16,22 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->decimal('cost_price',10,2);
-            $table->decimal('sell_price',10,2);
-            $table->decimal('promo_price',10,2);
-            $table->decimal('gross_weight',10,2);
-            $table->decimal('net_weight',10,2);
+            $table->string('sku')->nullable();
+            $table->string('gtin')->nullable();
+            $table->string('ncm')->nullable();
+            $table->decimal('cost_price',10,2)->nullable();
+            $table->decimal('sell_price',10,2)->nullable();
+            $table->decimal('promo_price',10,2)->nullable();
+            $table->decimal('gross_weight',10,2)->nullable();
+            $table->decimal('net_weight',10,2)->nullable();
             $table->date('validity')->nullable();
             $table->string('condition');
-            $table->string('width');
-            $table->string('lenght');
-            $table->string('height');
+            $table->string('width')->nullable();
+            $table->string('lenght')->nullable();
+            $table->string('height')->nullable();
             $table->string('unit');
-            $table->longText('description');
-            $table->integer('stock');
+            $table->longText('description')->nullable();
+            $table->integer('stock')->nullable();
             $table->integer('category_id')
                 ->unsigned()->nullable();
             $table->foreign('category_id')
@@ -41,6 +44,7 @@ class CreateProductsTable extends Migration
                 ->references('id')
                 ->on('sub_categories')
                 ->onDelete('cascade');
+            $table->boolean('featured', true);
             $table->boolean('active', true);
             $table->timestamps();
         });
