@@ -43,6 +43,11 @@ abstract class Repository
         return $this->model->paginate($limit);
     }
 
+    public function all()
+    {
+        return $this->model->all();
+    }
+
     /**
      * @param array $data
      * @return mixed

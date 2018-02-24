@@ -24,50 +24,50 @@ class Category extends Model
                 'type'  => null
             ]
         ],
-        'name' => [
+        'category_name' => [
             'showTable' => true,
             'component' => null,
             'label' => 'Nome',
             'options' => [
-                'id'    => 'name',
+                'id'    => 'category_name',
                 'class' => null,
-                'name'  => 'name',
+                'name'  => 'category_name',
                 'tagName'   => 'a',
                 'type'  => null
             ]
         ],
-        'active' => [
+        'category_active' => [
             'showTable' => true,
             'component' => null,
             'label' => 'Ativo',
             'options' => [
-                'id'    => 'active',
+                'id'    => 'category_active',
                 'class' => null,
-                'name'  => 'active',
+                'name'  => 'category_active',
                 'tagName'   => 'span',
                 'type'  => 'boolean'
             ]
         ],
-        'featured' => [
+        'category_featured' => [
             'showTable' => true,
             'component' => null,
             'label' => 'Destacado',
             'options' => [
-                'id'    => 'featured',
+                'id'    => 'category_featured',
                 'class' => null,
-                'name'  => 'featured',
+                'name'  => 'category_featured',
                 'tagName'   => 'span',
                 'type'  => 'boolean'
             ]
         ],
-        'class' => [
+        'category_class' => [
             'showTable' => true,
             'component' => null,
             'label' => 'Classe',
             'options' => [
-                'id'    => 'class',
+                'id'    => 'category_class',
                 'class' => null,
-                'name'  => 'class',
+                'name'  => 'category_class',
                 'tagName'   => 'span',
                 'type'  => null
             ]
