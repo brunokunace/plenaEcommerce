@@ -3,7 +3,7 @@
         <div class="wrapper">
             <div class="pad">
                 <h1>
-                    <a href="index.html" title="Plena Natura - Cosméticos Naturais">
+                    <a href="/" title="Plena Natura - Cosméticos Naturais">
                         <img src="{{ asset('images/plena-natura-cosmeticos-naturais.jpg') }}" alt="Plena Natura - Cosméticos Naturais">
                     </a>
                 </h1>

@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Helpers;
-
 function copyRecursive($source, $destiny, $mode = 0755)
 {
     $info = pathinfo($destiny);
@@ -9,4 +7,17 @@ function copyRecursive($source, $destiny, $mode = 0755)
         mkdir($info['dirname'], $mode, true);
     }
     return copy($source, $destiny);
+}
+
+if (!function_exists('formatPrice')) {
+
+    /**
+     * Format integer to a price
+     * @param integer $price
+     * @return string
+     */
+    function formatPrice($price)
+    {
+        return 'R$' . number_format($price, 2, ',', '.');
+    }
 }
