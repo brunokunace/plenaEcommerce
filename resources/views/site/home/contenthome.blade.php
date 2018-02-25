@@ -14,7 +14,7 @@
                 </div>
                 <div class="pad owl-vitrine">
                     @foreach($category->products as $product)
-                        <a href="{{ $product->id }}" title="{{ $product->name }}" class="produto">
+                        <a href="{{ route('site.product.index', $product->id) }}" title="{{ $product->name }}" class="produto">
 
                             <img src="{{ asset('images/produto.jpg') }}" alt="{{ $product->name }}">
                             <strong>
@@ -34,7 +34,6 @@
                                 <span>
                                   ou em 10x de <strong>R$4,20</strong>
                                 </span>
-{{--                                {{ dd($product->manufacturer) }}--}}
                                 <i>{{ $product->manufacturer->manufacturer_name }}</i>
                             </div>
                         </a>

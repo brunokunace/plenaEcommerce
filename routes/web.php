@@ -2,8 +2,10 @@
 
 use App\Common\Router\Router;
 use App\Http\Controllers\Site\HomeController;
+use App\Http\Controllers\Site\ProductController;
 
 Router::get('/', HomeController::class)->name('site.home.index');
+Router::get('/product/{id}', ProductController::class)->name('site.product.index');
 
 
 Router::middleware('auth')->group(function (){
