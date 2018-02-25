@@ -134,7 +134,6 @@ class ResourceController extends Controller
     }
     public function destroyMultiple(Request $request)
     {
-//        dd($request->items);
         $this->repository->destroyMultiple($request->items);
         return redirect()->route("{$this->domain}.index")
             ->with('success', $this->repository->message(['destroy.success']));
