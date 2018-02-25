@@ -5,6 +5,9 @@ body{
 .container {
   margin-top: 50px;
 }
+.login {
+  margin: 200px auto;
+}
 .botao_verde {
   background-color: #4ab858;
 }

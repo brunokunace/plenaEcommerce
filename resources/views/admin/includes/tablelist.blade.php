@@ -14,9 +14,12 @@
                 </tr>
                 </thead>
                 <tbody>
+                <form id="deleteSelectedForm" method="POST" action="{{ route($domain.'.destroyMultiple') }}">
+                    {!! csrf_field() !!}
+                <input type="hidden" name="_method" value="delete" />
                 @foreach($data as $keyRegistry => $registry)
                     <tr>
-                        <td><input type="checkbox" value="{{ $registry->id }}"></td>
+                        <td><input type="checkbox" name="items[]" value="{{ $registry->id }}"></td>
                         @foreach($properties as $key => $property)
                             @if($property['showTable'])
                                 <td scope="row">
@@ -54,7 +57,7 @@
                         @endforeach
                     </tr>
                 @endforeach
-
+                </form>
                 </tbody>
             </table>
         </div>

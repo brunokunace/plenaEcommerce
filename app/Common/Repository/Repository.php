@@ -116,6 +116,16 @@ abstract class Repository
 
         return $this->model->toArray();
     }
+    /**
+     * @param $selected
+     * @return array
+     */
+    public function destroyMultiple($selected)
+    {
+        $this->model->destroy($selected);
+
+        return $this->model->toArray();
+    }
 
     /**
      * @param array $data

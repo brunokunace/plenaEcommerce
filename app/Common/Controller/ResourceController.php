@@ -130,6 +130,13 @@ class ResourceController extends Controller
     {
         $this->repository->destroy($id);
         return redirect()->route("{$this->domain}.index")
-            ->with('success', $this->repository->message('destroy.success'));
+            ->with('success', $this->repository->message(['destroy.success']));
+    }
+    public function destroyMultiple(Request $request)
+    {
+//        dd($request->items);
+        $this->repository->destroyMultiple($request->items);
+        return redirect()->route("{$this->domain}.index")
+            ->with('success', $this->repository->message(['destroy.success']));
     }
 }
