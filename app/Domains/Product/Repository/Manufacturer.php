@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Domains\Manufacturer\Repository;
+namespace App\Domains\Product\Repository;
 
 use App\Common\Repository\Repository;
-use App\Domains\Manufacturer\Model\Manufacturer as Model;
+use App\Domains\Product\Model\Manufacturer as Model;
 
 class Manufacturer extends Repository
 {

@@ -101,7 +101,7 @@
     <div class="form-row">
         <div class="col-md-3 mb-3">
             <label for="validationServer03">Fabricante</label>
-            <select class="custom-select js-example-basic-single" name="manufacturer_id" id="manufacturer_id" disabled>
+            <select class="custom-select js-example-basic-single" name="manufacturer_id" id="manufacturer_id">
             </select>
         </div>
         <div class="col-md-3 mb-3">
@@ -167,7 +167,30 @@
                 }
             });
         }
+        function listManufacturer() {
+            $.ajax({
+                type: 'GET',
+                url: '{{ route('api.manufacturer.all') }}',
+                success: function (data) {
+                    const select = $('#manufacturer_id');
+                    select.empty()
+                    $.each(data, function() {
+                        let selected = null
+                        let id_cat = null
+                        @isset($data)
+                            id_cat = {{ $data->manufacturer_id }}
+                                @endisset
+                        if (this.id === id_cat) {
+                            selected = 'selected="selected"';
+                        }
+                        select.append($("<option " + selected + " />").val(this.id).text(this.manufacturer_name));
+
+                    });
+                }
+            });
+        }
         $(document).ready(function () {
+            listManufacturer()
             listCategory()
         });
     </script>

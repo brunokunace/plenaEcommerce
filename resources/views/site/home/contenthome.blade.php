@@ -34,7 +34,8 @@
                                 <span>
                                   ou em 10x de <strong>R$4,20</strong>
                                 </span>
-                                <i>Herbia</i>
+{{--                                {{ dd($product->manufacturer) }}--}}
+                                <i>{{ $product->manufacturer->manufacturer_name }}</i>
                             </div>
                         </a>
                     @endforeach

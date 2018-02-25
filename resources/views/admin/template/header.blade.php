@@ -17,7 +17,10 @@
                 <a class="nav-link" href="{{ route('admin.product.index') }}">Produtos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.manufacturer.index') }}">Fornecedores</a>
+                <a class="nav-link" href="{{ route('admin.manufacturer.index') }}">Fabricantes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.supplier.index') }}">Fornecedores</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.client.index') }}">Clientes</a>

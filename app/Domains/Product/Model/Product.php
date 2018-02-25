@@ -263,6 +263,18 @@ class Product extends Model
                 'tagName'   => null,
                 'type'  => null
             ]
+        ],
+        'manufacturer_id' => [
+            'showTable' => false,
+            'component' => null,
+            'label' => null,
+            'options' => [
+                'id'    => 'manufacturer_id',
+                'class' => null,
+                'name'  => 'manufacturer_id',
+                'tagName'   => null,
+                'type'  => null
+            ]
         ]
 //        ,
 //        'sub_category_id' => [
@@ -281,5 +293,8 @@ class Product extends Model
 
     public function category(){
         return $this->belongsTo(Category::class);
+    }
+    public function manufacturer(){
+        return $this->belongsTo(Manufacturer::class);
     }
 }

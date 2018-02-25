@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Domains\Manufacturer\Model;
+namespace App\Domains\Supplier\Model;
 
 use Illuminate\Notifications\Notifiable;
 use App\Common\Model\Model;
 
-class Manufacturer extends Model
+class Supplier extends Model
 {
     use Notifiable;
 
