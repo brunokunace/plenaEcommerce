@@ -12,6 +12,6 @@ class CategoryController extends ResourceController
         parent::__construct($repository);
 
         $this->domain = "admin.category";
-        $this->offset = 5;
+        $this->offset = 100;
     }
 }
