@@ -20,7 +20,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="birthday">Data de Nascimento</label>
-                <input type="text" class="form-control" id="birthday" placeholder="Data de Nascimento" name="birthday" value="{{ $data->birthday or '' }}">
+                <input type="date" class="form-control" id="birthday" placeholder="Data de Nascimento" name="birthday" value="{{ $data->birthday or '' }}">
             </div>
         </div>
         <div class="col-md-4">

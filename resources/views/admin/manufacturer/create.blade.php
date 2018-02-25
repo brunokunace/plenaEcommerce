@@ -48,7 +48,7 @@
                     '</div>' +
                     '<div class="col">' +
                     '<label for="birthday" class="colland">Aniversário</label>' +
-                    '<input type="text" class="form-control form-control-sm" placeholder="" name="birthday" value="{{ $data->birthday or '' }}">' +
+                    '<input type="date" class="form-control form-control-sm" placeholder="" name="birthday" value="{{ $data->birthday or '' }}">' +
                     '</div>' +
                     '</div>' +
                     '<div class="row" style="margin-left: 50px;">' +
@@ -95,7 +95,7 @@
                     '</div>' +
                     '<div class="col">' +
                     '<label for="birthday" class="colland">Aniversário</label>' +
-                    '<input type="text" class="form-control form-control-sm" placeholder="" name="birthday" value="{{ $data->birthday or '' }}">' +
+                    '<input type="date" class="form-control form-control-sm" placeholder="" name="birthday" value="{{ $data->birthday or '' }}">' +
                     '</div>' +
                     '</div>' +
                     '<div class="row" style="margin-left: 50px;">' +
