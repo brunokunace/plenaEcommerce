@@ -1,11 +1,9 @@
 <?php
 
 use App\Common\Router\Router;
+use App\Http\Controllers\Site\HomeController;
 
-
-Router::get('/', function () {
-    return view('site.home.index');
-})->name('site.home.index');
+Router::get('/', HomeController::class)->name('site.home.index');
 
 
 Router::middleware('auth')->group(function (){
