@@ -1,8 +1,16 @@
 <div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="category_name">Nome</label>
+            <input type="text" class="form-control" id="category_name" placeholder="Nome da Categoria" name="category_name" value="{{ $data->category_name or '' }}">
+        </div>
+    </div>
+</div>
+<div class="row">
     <div class="col-md-6">
         <div class="form-group">
-            <label for="name">Nome</label>
-            <input type="text" class="form-control" id="category_name" placeholder="Nome da Categoria" name="category_name" value="{{ $data->category_name or '' }}">
+            <label for="category_icon">Ícone</label>
+            <input type="text" class="form-control" id="category_icon" placeholder="Ex.: fa fa-smile-o" name="category_icon" value="{{ $data->category_icon or '' }}">
         </div>
     </div>
     <div class="col-md-6">

@@ -36,6 +36,18 @@ class Category extends Model
                 'type'  => null
             ]
         ],
+        'category_icon' => [
+            'showTable' => false,
+            'component' => null,
+            'label' => 'Ícone',
+            'options' => [
+                'id'    => 'category_icon',
+                'class' => null,
+                'name'  => 'category_icon',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ],
         'category_active' => [
             'showTable' => true,
             'component' => null,
