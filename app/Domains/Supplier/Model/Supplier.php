@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Domains\Product\Model;
+namespace App\Domains\Supplier\Model;
 
 use Illuminate\Notifications\Notifiable;
 use App\Common\Model\Model;
 
-class Product extends Model
+class Supplier extends Model
 {
     use Notifiable;
 
@@ -36,170 +36,255 @@ class Product extends Model
                 'type'  => null
             ]
         ],
-        'sku' => [
+        'type_person' => [
             'showTable' => false,
             'component' => null,
-            'label' => 'SKU',
+            'label' => 'Tipo de Pessoa',
             'options' => [
-                'id'    => 'sku',
+                'id'    => 'type_person',
                 'class' => null,
-                'name'  => 'sku',
+                'name'  => 'type_person',
                 'tagName'   => 'span',
                 'type'  => null
             ]
         ],
-        'gtin' => [
-            'showTable' => false,
-            'component' => null,
-            'label' => 'GTIN',
-            'options' => [
-                'id'    => 'gtin',
-                'class' => null,
-                'name'  => 'gtin',
-                'tagName'   => 'span',
-                'type'  => null
-            ]
-        ],
-        'ncm' => [
-            'showTable' => false,
-            'component' => null,
-            'label' => 'NCM',
-            'options' => [
-                'id'    => 'ncm',
-                'class' => null,
-                'name'  => 'ncm',
-                'tagName'   => 'span',
-                'type'  => null
-            ]
-        ],
-        'cost_price' => [
-            'showTable' => false,
-            'component' => null,
-            'label' => 'Preço de Custo',
-            'options' => [
-                'id'    => 'cost_price',
-                'class' => null,
-                'name'  => 'cost_price',
-                'tagName'   => 'span',
-                'type'  => null
-            ]
-        ],
-        'sell_price' => [
+        'cpf' => [
             'showTable' => true,
             'component' => null,
-            'label' => 'Preço de Venda',
+            'label' => 'CPF',
             'options' => [
-                'id'    => 'sell_price',
+                'id'    => 'cpf',
                 'class' => null,
-                'name'  => 'sell_price',
+                'name'  => 'cpf',
                 'tagName'   => 'span',
                 'type'  => null
             ]
         ],
-        'promo_price' => [
+        'rg' => [
             'showTable' => false,
             'component' => null,
-            'label' => 'Preço Promocional',
+            'label' => 'RG',
             'options' => [
-                'id'    => 'promo_price',
+                'id'    => 'rg',
                 'class' => null,
-                'name'  => 'promo_price',
+                'name'  => 'rg',
                 'tagName'   => 'span',
                 'type'  => null
             ]
         ],
-        'gross_weight' => [
+        'birthday' => [
             'showTable' => false,
             'component' => null,
-            'label' => 'Peso Bruto',
+            'label' => 'Aniversário',
             'options' => [
-                'id'    => 'gross_weight',
+                'id'    => 'birthday',
                 'class' => null,
-                'name'  => 'gross_weight',
+                'name'  => 'birthday',
                 'tagName'   => 'span',
                 'type'  => null
             ]
         ],
-        'net_weight' => [
+        'foreign_id' => [
             'showTable' => false,
             'component' => null,
-            'label' => 'Peso Líquido',
+            'label' => 'ID Estrangeiro',
             'options' => [
-                'id'    => 'net_weight',
+                'id'    => 'foreign_id',
                 'class' => null,
-                'name'  => 'net_weight',
+                'name'  => 'foreign_id',
                 'tagName'   => 'span',
                 'type'  => null
             ]
         ],
-        'validity' => [
-            'showTable' => false,
+
+        'cnpj' => [
+            'showTable' => true,
             'component' => null,
-            'label' => 'Validade',
+            'label' => 'CNPJ',
             'options' => [
-                'id'    => 'validity',
+                'id'    => 'cnpj',
                 'class' => null,
-                'name'  => 'validity',
+                'name'  => 'cnpj',
                 'tagName'   => 'span',
                 'type'  => null
             ]
         ],
-        'condition' => [
+        'company_name' => [
             'showTable' => false,
             'component' => null,
-            'label' => 'Condição',
+            'label' => 'Razão Social',
             'options' => [
-                'id'    => 'condition',
+                'id'    => 'company_name',
                 'class' => null,
-                'name'  => 'condition',
+                'name'  => 'company_name',
                 'tagName'   => 'span',
                 'type'  => null
             ]
         ],
-        'width' => [
+        'state_registration' => [
             'showTable' => false,
             'component' => null,
-            'label' => 'Largura',
+            'label' => 'Inscrição Estadual',
             'options' => [
-                'id'    => 'width',
+                'id'    => 'state_registration',
                 'class' => null,
-                'name'  => 'width',
+                'name'  => 'state_registration',
                 'tagName'   => 'span',
                 'type'  => null
             ]
         ],
-        'lenght' => [
+        'ind_state_registration' => [
             'showTable' => false,
             'component' => null,
-            'label' => 'Comprimento',
+            'label' => 'Inscrição Estadual',
             'options' => [
-                'id'    => 'lenght',
+                'id'    => 'ind_state_registration',
                 'class' => null,
-                'name'  => 'lenght',
+                'name'  => 'ind_state_registration',
                 'tagName'   => 'span',
                 'type'  => null
             ]
         ],
-        'height' => [
+        'municipal_registration' => [
             'showTable' => false,
             'component' => null,
-            'label' => 'Altura',
+            'label' => 'Inscrição Municipal',
             'options' => [
-                'id'    => 'height',
+                'id'    => 'municipal_registration',
                 'class' => null,
-                'name'  => 'height',
+                'name'  => 'municipal_registration',
                 'tagName'   => 'span',
                 'type'  => null
             ]
         ],
-        'unit' => [
+        'cep' => [
             'showTable' => false,
             'component' => null,
-            'label' => 'Unidade',
+            'label' => 'CEP',
             'options' => [
-                'id'    => 'unit',
+                'id'    => 'cep',
                 'class' => null,
-                'name'  => 'unit',
+                'name'  => 'cep',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ],
+        'street' => [
+            'showTable' => false,
+            'component' => null,
+            'label' => 'Rua',
+            'options' => [
+                'id'    => 'street',
+                'class' => null,
+                'name'  => 'street',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ],
+        'number' => [
+            'showTable' => false,
+            'component' => null,
+            'label' => 'Número',
+            'options' => [
+                'id'    => 'number',
+                'class' => null,
+                'name'  => 'number',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ],
+        'complement' => [
+            'showTable' => false,
+            'component' => null,
+            'label' => 'Complemento',
+            'options' => [
+                'id'    => 'complement',
+                'class' => null,
+                'name'  => 'complement',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ],
+        'neighborhood' => [
+            'showTable' => false,
+            'component' => null,
+            'label' => 'Bairro',
+            'options' => [
+                'id'    => 'neighborhood',
+                'class' => null,
+                'name'  => 'neighborhood',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ],
+        'city' => [
+            'showTable' => false,
+            'component' => null,
+            'label' => 'Cidade',
+            'options' => [
+                'id'    => 'city',
+                'class' => null,
+                'name'  => 'city',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ],
+        'state' => [
+            'showTable' => false,
+            'component' => null,
+            'label' => 'Estado',
+            'options' => [
+                'id'    => 'state',
+                'class' => null,
+                'name'  => 'state',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ],
+        'commercial_phone' => [
+            'showTable' => true,
+            'component' => null,
+            'label' => 'Tel Comercial',
+            'options' => [
+                'id'    => 'commercial_phone',
+                'class' => null,
+                'name'  => 'commercial_phone',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ],
+        'home_phone' => [
+            'showTable' => false,
+            'component' => null,
+            'label' => 'Tel Residencial',
+            'options' => [
+                'id'    => 'home_phone',
+                'class' => null,
+                'name'  => 'home_phone',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ],
+        'cell_phone' => [
+            'showTable' => false,
+            'component' => null,
+            'label' => 'Celular',
+            'options' => [
+                'id'    => 'cell_phone',
+                'class' => null,
+                'name'  => 'cell_phone',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ],
+        'email' => [
+            'showTable' => true,
+            'component' => null,
+            'label' => 'Email',
+            'options' => [
+                'id'    => 'email',
+                'class' => null,
+                'name'  => 'email',
                 'tagName'   => 'span',
                 'type'  => null
             ]
@@ -215,86 +300,6 @@ class Product extends Model
                 'tagName'   => 'span',
                 'type'  => null
             ]
-        ],
-        'stock' => [
-            'showTable' => true,
-            'component' => null,
-            'label' => 'Estoque',
-            'options' => [
-                'id'    => 'stock',
-                'class' => null,
-                'name'  => 'stock',
-                'tagName'   => 'span',
-                'type'  => null
-            ]
-        ],
-        'active' => [
-            'showTable' => true,
-            'component' => null,
-            'label' => 'Ativo',
-            'options' => [
-                'id'    => 'active',
-                'class' => null,
-                'name'  => 'active',
-                'tagName'   => 'span',
-                'type'  => 'boolean'
-            ]
-        ],
-        'featured' => [
-            'showTable' => true,
-            'component' => null,
-            'label' => 'Destacado',
-            'options' => [
-                'id'    => 'featured',
-                'class' => null,
-                'name'  => 'featured',
-                'tagName'   => 'span',
-                'type'  => 'boolean'
-            ]
-        ],
-        'category_id' => [
-            'showTable' => false,
-            'component' => null,
-            'label' => null,
-            'options' => [
-                'id'    => 'category_id',
-                'class' => null,
-                'name'  => 'category_id',
-                'tagName'   => null,
-                'type'  => null
-            ]
-        ],
-        'manufacturer_id' => [
-            'showTable' => false,
-            'component' => null,
-            'label' => null,
-            'options' => [
-                'id'    => 'manufacturer_id',
-                'class' => null,
-                'name'  => 'manufacturer_id',
-                'tagName'   => null,
-                'type'  => null
-            ]
         ]
-//        ,
-//        'sub_category_id' => [
-//            'showTable' => false,
-//            'component' => null,
-//            'label' => null,
-//            'options' => [
-//                'id'    => 'sub_category_id',
-//                'class' => null,
-//                'name'  => 'sub_category_id',
-//                'tagName'   => null,
-//                'type'  => null
-//            ]
-//        ]
     ];
-
-    public function category(){
-        return $this->belongsTo(Category::class);
-    }
-    public function manufacturer(){
-        return $this->belongsTo(Manufacturer::class);
-    }
 }

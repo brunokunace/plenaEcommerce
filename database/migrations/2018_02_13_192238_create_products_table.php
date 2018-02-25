@@ -44,6 +44,12 @@ class CreateProductsTable extends Migration
                 ->references('id')
                 ->on('sub_categories')
                 ->onDelete('cascade');
+            $table->integer('manufacturer_id')
+                ->unsigned()->nullable();
+            $table->foreign('manufacturer_id')
+                ->references('id')
+                ->on('manufacturers')
+                ->onDelete('cascade');
             $table->boolean('featured', true);
             $table->boolean('active', true);
             $table->timestamps();

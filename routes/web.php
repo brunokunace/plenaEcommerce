@@ -14,8 +14,9 @@ Router::middleware('auth')->group(function (){
 
     Router::prefix('admin')->group(__DIR__ . '/web/domains/product/category.php');
     Router::prefix('admin')->group(__DIR__ . '/web/domains/product/product.php');
+    Router::prefix('admin')->group(__DIR__ . '/web/domains/product/manufacturer.php');
     Router::prefix('admin')->group(__DIR__ . '/web/domains/client/client.php');
-    Router::prefix('admin')->group(__DIR__ . '/web/domains/manufacturer/manufacturer.php');
+    Router::prefix('admin')->group(__DIR__ . '/web/domains/supplier/supplier.php');
 });
 
 Router::prefix('auth')->group(__DIR__ . '/web/auth/auth.php');
