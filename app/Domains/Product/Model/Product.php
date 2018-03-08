@@ -34,7 +34,8 @@ class Product extends Model
                 'name'  => 'name',
                 'tagName'   => 'a',
                 'type'  => null
-            ]
+            ],
+            'validation' => 'required'
         ],
         'sku' => [
             'showTable' => false,
@@ -82,7 +83,8 @@ class Product extends Model
                 'name'  => 'cost_price',
                 'tagName'   => 'span',
                 'type'  => null
-            ]
+            ],
+            'validation' => 'required|numeric'
         ],
         'sell_price' => [
             'showTable' => true,
@@ -94,7 +96,8 @@ class Product extends Model
                 'name'  => 'sell_price',
                 'tagName'   => 'span',
                 'type'  => null
-            ]
+            ],
+            'validation' => 'required|numeric'
         ],
         'promo_price' => [
             'showTable' => false,
@@ -106,7 +109,8 @@ class Product extends Model
                 'name'  => 'promo_price',
                 'tagName'   => 'span',
                 'type'  => null
-            ]
+            ],
+            'validation' => 'required|numeric'
         ],
         'gross_weight' => [
             'showTable' => false,
@@ -118,7 +122,8 @@ class Product extends Model
                 'name'  => 'gross_weight',
                 'tagName'   => 'span',
                 'type'  => null
-            ]
+            ],
+            'validation' => 'required|numeric'
         ],
         'net_weight' => [
             'showTable' => false,
@@ -130,7 +135,8 @@ class Product extends Model
                 'name'  => 'net_weight',
                 'tagName'   => 'span',
                 'type'  => null
-            ]
+            ],
+            'validation' => 'required|numeric'
         ],
         'validity' => [
             'showTable' => false,
@@ -154,7 +160,8 @@ class Product extends Model
                 'name'  => 'condition',
                 'tagName'   => 'span',
                 'type'  => null
-            ]
+            ],
+            'validation' => 'required'
         ],
         'width' => [
             'showTable' => false,
@@ -202,7 +209,8 @@ class Product extends Model
                 'name'  => 'unit',
                 'tagName'   => 'span',
                 'type'  => null
-            ]
+            ],
+            'validation' => 'required'
         ],
         'description' => [
             'showTable' => false,
@@ -238,7 +246,8 @@ class Product extends Model
                 'name'  => 'active',
                 'tagName'   => 'span',
                 'type'  => 'boolean'
-            ]
+            ],
+            'validation' => 'required'
         ],
         'featured' => [
             'showTable' => true,
@@ -250,7 +259,8 @@ class Product extends Model
                 'name'  => 'featured',
                 'tagName'   => 'span',
                 'type'  => 'boolean'
-            ]
+            ],
+            'validation' => 'required'
         ],
         'category_id' => [
             'showTable' => false,

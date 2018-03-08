@@ -27,4 +27,12 @@ class Model extends EloquentModel
         return array_diff_key(array_keys($this->properties), $this->guarded);
     }
 
+    public function getValidation() {
+        return array_reduce($this->properties, function($acc, $prop) {
+            if(isset($prop['validation']))
+                $acc[$prop['options']['id']] = $prop['validation'];
+            return $acc;
+        });
+    }
+
 }

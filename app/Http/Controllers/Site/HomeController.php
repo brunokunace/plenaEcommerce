@@ -15,13 +15,9 @@ class HomeController extends Controller
             $q->where('active', true);
         })
             ->with('products')
-
             ->where('category_featured', true)
             ->where('category_active', true)
             ->get();
-//            ->toSql();
-//            dd($categories);
-
 
         return view('site.home.index', compact('categories'));
     }

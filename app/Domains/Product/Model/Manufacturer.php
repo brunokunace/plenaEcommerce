@@ -34,7 +34,8 @@ class Manufacturer extends Model
                 'name'  => 'manufacturer_name',
                 'tagName'   => 'a',
                 'type'  => null
-            ]
+            ],
+            'validation' => 'required'
         ],
         'manufacturer_active' => [
             'showTable' => true,
@@ -46,7 +47,8 @@ class Manufacturer extends Model
                 'name'  => 'manufacturer_active',
                 'tagName'   => 'span',
                 'type'  => 'boolean'
-            ]
+            ],
+            'validation' => 'required'
         ],
         'manufacturer_featured' => [
             'showTable' => true,
@@ -58,7 +60,8 @@ class Manufacturer extends Model
                 'name'  => 'manufacturer_featured',
                 'tagName'   => 'span',
                 'type'  => 'boolean'
-            ]
+            ],
+            'validation' => 'required'
         ]
     ];
 

@@ -14,4 +14,6 @@ class CategoryController extends ResourceController
         $this->domain = "admin.category";
         $this->offset = 100;
     }
+
+
 }

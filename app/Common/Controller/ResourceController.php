@@ -31,8 +31,6 @@ class ResourceController extends Controller
     /**
      * ResourceController constructor.
      * @param Repository $repository
-     * @param $domain
-     * @param $offset
      */
     public function __construct(Repository $repository)
     {
@@ -72,8 +70,7 @@ class ResourceController extends Controller
      */
     public function store(Request $request)
     {
-       // $request->validate($this->repository->validates());
-
+        $this->repository->validates($request->all());
         $this->repository->create($request->all());
         return redirect()->route("{$this->domain}.index")
             ->with('success', $this->repository->message(['store.success']));
@@ -113,7 +110,7 @@ class ResourceController extends Controller
      */
     public function update($id, Request $request)
     {
-        //$request->validate($this->repository->validates());
+        $this->repository->validates($request->all());
 
         $this->repository->update($id, $request->all());
         return redirect()->route("{$this->domain}.index")

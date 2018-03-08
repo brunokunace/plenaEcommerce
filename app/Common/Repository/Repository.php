@@ -9,8 +9,9 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
+use Validator;
 use SplFileInfo;
-use function App\Helpers\copyRecursive;
+use function copyRecursive;
 
 /**
  * Class Repository
@@ -22,6 +23,11 @@ abstract class Repository
      * @var Model
      */
     protected $model;
+
+    /**
+     * @param array
+     */
+    protected $validates;
 
     /**
      * Repository constructor.
@@ -314,8 +320,19 @@ abstract class Repository
 
     /**
      * @return array
+     * @param $data
      */
-    public function validates() {
-        return [];
+    public function validates($data) {
+        $validations = $this->model->getValidation();
+
+        if(empty($data)){
+            return [];
+        }
+        if(empty($validations)){
+            return [];
+        }
+
+        Validator::make($data, $validations)->validate();
+
     }
 }

@@ -10,5 +10,8 @@ class Category extends Repository
     public function __construct(Model $model)
     {
         parent::__construct($model);
+
     }
+
+
 }

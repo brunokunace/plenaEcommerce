@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        @include('admin.includes.alerts ')
         <div class="row">
             <div class="col-md-10">
                 @isset($data)

@@ -34,7 +34,8 @@ class Category extends Model
                 'name'  => 'category_name',
                 'tagName'   => 'a',
                 'type'  => null
-            ]
+            ],
+            'validation' => 'required'
         ],
         'category_icon' => [
             'showTable' => false,
@@ -46,7 +47,8 @@ class Category extends Model
                 'name'  => 'category_icon',
                 'tagName'   => 'span',
                 'type'  => null
-            ]
+            ],
+            'validation' => 'required'
         ],
         'category_active' => [
             'showTable' => true,
@@ -58,7 +60,8 @@ class Category extends Model
                 'name'  => 'category_active',
                 'tagName'   => 'span',
                 'type'  => 'boolean'
-            ]
+            ],
+            'validation' => 'required'
         ],
         'category_featured' => [
             'showTable' => true,
@@ -70,7 +73,8 @@ class Category extends Model
                 'name'  => 'category_featured',
                 'tagName'   => 'span',
                 'type'  => 'boolean'
-            ]
+            ],
+            'validation' => 'required'
         ],
         'category_class' => [
             'showTable' => true,
