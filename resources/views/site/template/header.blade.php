@@ -14,54 +14,7 @@
                 <div class="search-ico closed">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
-                <div class="shop">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    <div class="items">
-                        2
-                    </div>
-                    <div class="mini-shop-cart">
-                        <ul>
-                            <li>
-                                <img src="{{ asset('images/produto.jpg') }}" alt="Nome do Produto">
-                                <div class="desc">
-                                    <strong>Powerfit Ômega (...)</strong>
-                                    <span>
-                                                Tamanho:100ml<br>
-                                                Quantidade:1
-                                            </span>
-                                </div>
-                                <div class="remove">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </div>
-                                <div class="value">
-                                    R$101,20
-                                </div>
-                            </li>
-                            <li>
-                                <img src="{{ asset('images/produto.jpg') }}" alt="Nome do Produto">
-                                <div class="desc">
-                                    <strong>Powerfit Ômega (...)</strong>
-                                    <span>
-                                                Tamanho:100ml<br>
-                                                Quantidade:1
-                                            </span>
-                                </div>
-                                <div class="remove">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </div>
-                                <div class="value">
-                                    R$101,20
-                                </div>
-                            </li>
-                        </ul>
-                        <strong>
-                            Subtotal <span>R$303,60</span>
-                        </strong>
-                        <a href="carrinho.html" class="button-shop" title="Finalizar Compra">
-                            Finalizar Comprar
-                        </a>
-                    </div>
-                </div>
+                @include('site.template.cart')
                 <div class="user">
                     <a href="#" id="login">
                         <i class="fa fa-user-circle-o" aria-hidden="true"></i>
@@ -1489,3 +1442,57 @@
         <div class="rgt"></div>
     </section>
 </header>
+<script type="text/javascript">
+    $(document).ready(function () {
+        listCartItems()
+    });
+    function removeCartItem(item)
+    {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: 'POST',
+            url: '{{ route('cart.delete') }}',
+            data: {item: item},
+            success: function () {
+                listCartItems()
+            }
+        });
+    }
+
+    function listCartItems()
+    {
+        $.ajax({
+            type: 'GET',
+            url: '{{ route('cart.list') }}',
+            success: function (data) {
+                console.log(data)
+                $('#countCartItems').html(data.count)
+                $('#totalCart').html('R$' + data.total)
+                const list = $('#listCartItems');
+                list.empty()
+                $.each(data.items, function() {
+                    let li = `<li>
+                    <img src="{{ asset('images/produto.jpg') }}" alt="Nome do Produto">
+                    <div class="desc">
+                        <strong>${this.name}</strong>
+                        <span>
+                            Quantidade:${this.qty}
+                        </span>
+                    </div>
+                    <div class="remove">
+                        <i class="fa fa-times" aria-hidden="true" onClick="removeCartItem('${this.rowId}')"></i>
+                    </div>
+                    <div class="value">
+                        R$${this.price}
+                    </div>
+                    </li>`
+                    list.append(li)
+                })
+            }
+        });
+    }
+</script>
