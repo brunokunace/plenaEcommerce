@@ -6,7 +6,7 @@ use App\Http\Controllers\Site\ProductController;
 
 Router::get('/', HomeController::class)->name('site.home.index');
 Router::get('/product/{id}', ProductController::class)->name('site.product.index');
-
+Router::prefix('')->group(__DIR__ . '/web/domains/cart/cart.php');
 
 Router::middleware('auth')->group(function (){
 
@@ -22,6 +22,7 @@ Router::middleware('auth')->group(function (){
 });
 
 Router::prefix('auth')->group(__DIR__ . '/web/auth/auth.php');
+
 
 
 

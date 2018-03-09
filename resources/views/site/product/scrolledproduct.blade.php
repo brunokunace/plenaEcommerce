@@ -5,7 +5,7 @@
             <h2>
                 {{ $product->name }}
             </h2>
-            <a href="carrinho.html" class="button">
+            <a href="carrinho.html" class="button" id="addToCartScrolled">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             </a>
             <span class="value">

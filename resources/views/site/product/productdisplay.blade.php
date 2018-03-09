@@ -59,7 +59,7 @@
         </div>
 
         <div class="bg-wrap">
-            <a href="carrinho.html" class="button">
+            <a class="button" id="addToCart">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i> Comprar Agora
             </a>
             <span class="disponivel">
@@ -102,3 +102,23 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+
+    $("#addToCart, #addToCartScrolled").click(function(e){
+        e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: 'POST',
+            url: '{{ route('cart.store') }}',
+            data: {id: {{$product->id}}},
+            success: function () {
+                listCartItems()
+            }
+        });
+    });
+</script>
