@@ -14,10 +14,12 @@
     <link rel="icon" href="{{ asset('images/favicon.png') }}" >
     <link rel="stylesheet" href="{{ asset('js/owl-carousel/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ asset('js/owl-carousel/owl.theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery.toast.min.css') }}">
     <script type="text/javascript" src="{{ asset('js/jquery-1.10.1.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/owl-carousel/owl.carousel.js') }}"></script>
     <script type="text/javascript" src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.toast.min.js') }}"></script>
 
 
 </head>

@@ -105,8 +105,7 @@
 
 <script type="text/javascript">
 
-    $("#addToCart, #addToCartScrolled").click(function(e){
-        e.preventDefault();
+    $("#addToCart, #addToCartScrolled").click(function(){
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -118,7 +117,21 @@
             data: {id: {{$product->id}}},
             success: function () {
                 listCartItems()
+                toastSuccess()
+
             }
         });
+
     });
+    function toastSuccess() {
+        $.toast({
+            heading: 'Adicionado ao Carrinho',
+            icon: 'success',
+            showHideTransition: 'fade',
+            hideAfter: 1500,
+            position: 'bottom-right',
+            loader: false
+        });
+
+    }
 </script>
