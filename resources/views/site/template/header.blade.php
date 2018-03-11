@@ -1469,11 +1469,13 @@
             type: 'GET',
             url: '{{ route('cart.list') }}',
             success: function (data) {
-                console.log(data)
+                const formato = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }
                 $('#countCartItems').html(data.count)
-                $('#totalCart').html('R$' + data.total)
+                total = parseFloat(data.total)
+                $('#totalCart').html(total.toLocaleString('pt-BR', formato))
                 const list = $('#listCartItems');
                 list.empty()
+
                 $.each(data.items, function() {
                     let li = `<li>
                     <img src="{{ asset('images/produto.jpg') }}" alt="Nome do Produto">
@@ -1487,7 +1489,7 @@
                         <i class="fa fa-times" aria-hidden="true" onClick="removeCartItem('${this.rowId}')"></i>
                     </div>
                     <div class="value">
-                        R$${this.price}
+                        ${this.price.toLocaleString('pt-BR', formato)}
                     </div>
                     </li>`
                     list.append(li)

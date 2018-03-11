@@ -18,6 +18,6 @@ if (!function_exists('formatPrice')) {
      */
     function formatPrice($price)
     {
-        return 'R$' . number_format($price, 2, ',', '.');
+        return 'R$' . number_format((float)$price, 2, ',', '.');
     }
 }

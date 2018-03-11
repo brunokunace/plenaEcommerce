@@ -11,3 +11,11 @@ Router::post('/cart/delete', [
 Router::get('/cart', [
     'uses' => 'App\Http\Controllers\CartController@listItems'
 ])->name('cart.list');
+
+Router::get('/cart/details', [
+    'uses' => 'App\Http\Controllers\CartController@details'
+])->name('cart.details');
+
+Router::put('/cart/update', [
+    'uses' => 'App\Http\Controllers\CartController@update'
+])->name('cart.update');

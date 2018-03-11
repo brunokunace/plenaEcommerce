@@ -28,4 +28,14 @@ class CartController extends Controller
     {
         Cart::remove($request->item);
     }
+
+    public function update(Request $request)
+    {
+        Cart::update($request->rowId, $request->qty);
+    }
+
+    public function details()
+    {
+        return view('site.cart.index');
+    }
 }
