@@ -6,7 +6,7 @@
         <strong>
             Subtotal <span id="totalCart"></span>
         </strong>
-        <a href="carrinho.html" class="button-shop" title="Finalizar Compra">
+        <a href="{{route('cart.details')}}" class="button-shop" title="Finalizar Compra">
             Finalizar Comprar
         </a>
     </div>

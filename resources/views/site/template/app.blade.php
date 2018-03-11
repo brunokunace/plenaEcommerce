@@ -21,17 +21,9 @@
 
 
 </head>
-<body>
+<body class="@yield('body_class')">
 
-<!-- Header -->
-@include('site.template.header')
-@include('site.template.socialwidget')
-
-@yield('content')
-
-<!-- Footer -->
-@include('site.template.footer')
-
+@yield('contentBody')
 
 </body>
 </html>

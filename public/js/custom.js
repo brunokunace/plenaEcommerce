@@ -239,14 +239,14 @@ $(function() {
         $('.cover-all .formas-pgto').addClass('visible');
     });
 
-    $(document).delegate('.container-header .shop', 'click', function(event) {
-        event.preventDefault();
-        $(this).addClass('active');
-    });
-    $(document).delegate('.container-header .shop.active', 'click', function(event) {
-        event.preventDefault();
-        $(this).removeClass('active');
-    });
+    // $(document).delegate('.container-header .shop', 'click', function(event) {
+    //     event.preventDefault();
+    //     $(this).addClass('active');
+    // });
+    // $(document).delegate('.container-header .shop.active', 'click', function(event) {
+    //     event.preventDefault();
+    //     $(this).removeClass('active');
+    // });
 
 
 

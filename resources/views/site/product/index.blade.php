@@ -1,4 +1,4 @@
-@extends('site.template.app')
+@extends('site.template.index')
 
 @section('content')
     @include('site.product.scrolledproduct')
