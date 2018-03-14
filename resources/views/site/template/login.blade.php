@@ -32,13 +32,13 @@
                 </a>
             </li>
             <li>
-                <a href="{{url('auth/facebook')}}" title="Entrar com Facebook">
+                <a href="{{url('authclient/auth/facebook')}}" title="Entrar com Facebook">
                     Entrar com Facebook
                     <i class="fa fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
             <li>
-                <a href="{{url('auth/google')}}" title="Entrar com Google Plus">
+                <a href="{{url('authclient/auth/google')}}" title="Entrar com Google Plus">
                     Entrar com Google Plus
                     <i class="fa fa-google" aria-hidden="true"></i>
                 </a>
