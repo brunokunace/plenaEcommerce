@@ -32,13 +32,13 @@
                 </a>
             </li>
             <li>
-                <a href="#" title="Entrar com Facebook">
+                <a href="{{url('auth/facebook')}}" title="Entrar com Facebook">
                     Entrar com Facebook
                     <i class="fa fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
             <li>
-                <a href="#" title="Entrar com Google Plus">
+                <a href="{{url('auth/google')}}" title="Entrar com Google Plus">
                     Entrar com Google Plus
                     <i class="fa fa-google" aria-hidden="true"></i>
                 </a>
@@ -60,20 +60,32 @@
         <strong>
             <i class="fa fa-envelope" aria-hidden="true"></i> Por favor informe seu e-mail
         </strong>
-        <form>
+        <form method="POST" action="{{ route('register.client') }}">
+            {{ csrf_field() }}
             <label>
-                        <span>
-                            E-mail
-                        </span>
-                <input type="text" placeholder="seu@email.com">
+                <span>
+                    E-mail
+                </span>
+                <input type="text" placeholder="seu@email.com" name="email" required>
             </label>
-
+            <label>
+                <span>
+                    Nome
+                </span>
+                <input type="text" placeholder="Nome" name="name" required>
+            </label>
+            <label>
+                <span>
+                    Senha
+                </span>
+                <input type="password" placeholder="Senha" name="password" required>
+            </label>
             <div class="btns-down">
                 <a href="#t1" class="inside" title="Voltar">
                     <i class="fa fa-angle-double-left" aria-hidden="true"></i> Voltar
                 </a>
-                <button>
-                    Continuar
+                <button type="submit">
+                    Criar
                 </button>
             </div>
         </form>
