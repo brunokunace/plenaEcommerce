@@ -18,8 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->string('category_name');
             $table->string('category_icon')->nullable();
             $table->string('category_class')->nullable();
-            $table->boolean('category_featured', true);
-            $table->boolean('category_active', true);
+            $table->boolean('category_featured')->default(true);
+            $table->boolean('category_active')->default(true);
             $table->timestamps();
         });
     }

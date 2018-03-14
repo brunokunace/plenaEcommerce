@@ -22,7 +22,7 @@ class CreateSubCategoriesTable extends Migration
                 ->references('id')
                 ->on('categories')
                 ->onDelete('cascade');
-            $table->boolean('active', true);
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

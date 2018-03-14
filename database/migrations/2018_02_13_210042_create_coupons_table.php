@@ -20,7 +20,7 @@ class CreateCouponsTable extends Migration
             $table->date('validity');
             $table->decimal('amount',10,2);
             $table->integer('quantity')->default(1);
-            $table->boolean('active', true);
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

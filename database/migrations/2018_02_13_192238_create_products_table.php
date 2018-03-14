@@ -50,8 +50,8 @@ class CreateProductsTable extends Migration
                 ->references('id')
                 ->on('manufacturers')
                 ->onDelete('cascade');
-            $table->boolean('featured', true);
-            $table->boolean('active', true);
+            $table->boolean('featured')->default(true);
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

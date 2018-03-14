@@ -30,7 +30,7 @@ class CreateDeliveryAddressesTable extends Migration
                 ->references('id')
                 ->on('clients')
                 ->onDelete('cascade');
-            $table->boolean('main',true);
+            $table->boolean('main')->default(true);
             $table->timestamps();
         });
     }

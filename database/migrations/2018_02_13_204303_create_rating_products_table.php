@@ -16,10 +16,10 @@ class CreateRatingProductsTable extends Migration
         Schema::create('rating_products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->boolean('delivered', true);
-            $table->boolean('delivered_on_time', true);
-            $table->boolean('correct_product', true);
-            $table->boolean('recommend', true);
+            $table->boolean('delivered')->default(true);
+            $table->boolean('delivered_on_time')->default(true);
+            $table->boolean('correct_product')->default(true);
+            $table->boolean('recommend')->default(true);
             $table->longText('description')->nullable();
             $table->integer('product_id')
                 ->unsigned();

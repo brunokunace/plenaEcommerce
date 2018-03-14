@@ -16,8 +16,8 @@ class CreateManufacturersTable extends Migration
         Schema::create('manufacturers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('manufacturer_name');
-            $table->boolean('manufacturer_featured', true);
-            $table->boolean('manufacturer_active', true);
+            $table->boolean('manufacturer_featured')->default(true);
+            $table->boolean('manufacturer_active')->default(true);
             $table->timestamps();
         });
     }
