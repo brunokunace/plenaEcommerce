@@ -17,15 +17,19 @@ class CreateClientsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('last_name');
-            $table->date('birthday');
-            $table->string('sex');
-            $table->string('cpf');
-            $table->string('phone');
-            $table->string('cell_phone');
+            $table->string('email');
+            $table->string('password')->nullable();
+            $table->string('provider_id')->nullable();
+            $table->date('birthday')->nullable();
+            $table->string('sex')->nullable();
+            $table->string('cpf')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('cell_phone')->nullable();
             $table->boolean('receive_email', true);
             $table->boolean('receive_sms', true);
-            $table->integer('sou_barato');
+            $table->integer('sou_barato')->nullable();
             $table->boolean('active', true);
+            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -8,7 +8,7 @@ Router::get('/', HomeController::class)->name('site.home.index');
 Router::get('/product/{id}', ProductController::class)->name('site.product.index');
 Router::prefix('')->group(__DIR__ . '/web/domains/cart/cart.php');
 
-Router::middleware('auth')->group(function (){
+Router::middleware('auth:user')->group(function (){
 
     Router::get('/admin', function () {
         return view('admin.home.index');
@@ -22,6 +22,7 @@ Router::middleware('auth')->group(function (){
 });
 
 Router::prefix('auth')->group(__DIR__ . '/web/auth/auth.php');
+Router::prefix('authclient')->group(__DIR__ . '/web/auth/authclient.php');
 
 
 

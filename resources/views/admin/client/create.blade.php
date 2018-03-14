@@ -3,16 +3,22 @@
 @section('contentForm')
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="form-group">
                 <label for="name">Nome</label>
                 <input type="text" class="form-control" id="name" placeholder="Nome" name="name" value="{{ $data->name or '' }}">
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="form-group">
                 <label for="last_name">Sobrenome</label>
                 <input type="text" class="form-control" id="last_name" placeholder="Sobrenome" name="last_name" value="{{ $data->last_name or '' }}">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" placeholder="Email" name="email" value="{{ $data->email or '' }}">
             </div>
         </div>
     </div>

@@ -4,12 +4,24 @@ namespace App\Domains\Client\Model;
 
 use Illuminate\Notifications\Notifiable;
 use App\Common\Model\Model;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 class Client extends Model
+    implements
+    AuthenticatableContract,
+    AuthorizableContract,
+    CanResetPasswordContract
 {
-    use Notifiable;
+    use Notifiable, Authenticatable, Authorizable, CanResetPassword;
 
     protected $guarded = ['id'];
+
+    protected $guard = 'clients';
 
     protected $properties = [
         'id' => [
@@ -44,6 +56,18 @@ class Client extends Model
                 'id'    => 'last_name',
                 'class' => null,
                 'name'  => 'last_name',
+                'tagName'   => 'span',
+                'type'  => null
+            ]
+        ],
+        'email' => [
+            'showTable' => false,
+            'component' => null,
+            'label' => 'Email',
+            'options' => [
+                'id'    => 'email',
+                'class' => null,
+                'name'  => 'email',
                 'tagName'   => 'span',
                 'type'  => null
             ]

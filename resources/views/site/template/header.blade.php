@@ -1,4 +1,5 @@
 <header class="">
+    @include('site.template.login')
     <section class="container-header">
         <div class="wrapper">
             <div class="pad">
@@ -14,12 +15,17 @@
                 <div class="search-ico closed">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
+
                 @include('site.template.cart')
                 <div class="user">
                     <a href="#" id="login">
                         <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        <span>Entrar/Cadastrar</span>
+                        @if (Auth::check())
+                            <span>{{Auth::user()->name}}</span>
+                        @else
+                            <span>Entrar/Cadastrar</span>
+                        @endif
                     </a>
                     <div class="mini-menu-user">
                         <ul>

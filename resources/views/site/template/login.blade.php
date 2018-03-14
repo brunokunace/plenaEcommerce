@@ -1,5 +1,5 @@
-<div class="cover-all show">
-    <div class="banner-pop visible" >
+<div class="cover-all">
+    <div class="banner-pop" >
 
         <div class="close">
             <i class="fa fa-window-close-o" aria-hidden="true"></i>
@@ -115,18 +115,19 @@
         <strong>
             <i class="fa fa-lock" aria-hidden="true"></i> Entrar com E-mail e Senha
         </strong>
-        <form>
+        <form method="POST" action="{{ route('login.client') }}">
+            {{ csrf_field() }}
             <label>
                         <span>
                             E-mail
                         </span>
-                <input type="text" placeholder="seu@email.com">
+                <input type="text" placeholder="seu@email.com" name="email">
             </label>
             <label>
                         <span>
                             Senha
                         </span>
-                <input type="password" placeholder="seu@email.com">
+                <input type="password" placeholder="password" name="password">
             </label>
 
             <div class="btns-log">
@@ -143,7 +144,7 @@
                 <a href="#t1" class="inside" title="Voltar">
                     <i class="fa fa-angle-double-left" aria-hidden="true"></i> Voltar
                 </a>
-                <button>
+                <button type="submit">
                     Entrar
                 </button>
             </div>
