@@ -220,11 +220,11 @@ $(function() {
         $('.cover-all .login').removeClass('visible');
         $('.cover-all .login' + tab).addClass('visible');
     });
-    $(document).delegate('.cover-all.show .login.t2 .btns-down button', 'click', function(event) {
-        event.preventDefault();
-        $('.cover-all .login').removeClass('visible');
-        $('.cover-all .login#t3').addClass('visible');
-    });
+    // $(document).delegate('.cover-all.show .login.t2 .btns-down button', 'click', function(event) {
+    //     event.preventDefault();
+    //     $('.cover-all .login').removeClass('visible');
+    //     $('.cover-all .login#t3').addClass('visible');
+    // });
 
 
     $(document).delegate('button#frete-table', 'click', function(event) {

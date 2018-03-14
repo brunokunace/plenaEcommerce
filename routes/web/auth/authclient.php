@@ -1,7 +1,7 @@
 <?php
 
 $this->post('login', 'App\Http\Controllers\Auth\ClientController@login')->name('login.client');
+$this->get('auth/{provider}','App\Http\Controllers\Auth\ClientController@redirectToProvider');
+$this->get('auth/{provider}/callback','App\Http\Controllers\Auth\ClientController@handleProviderCallback');
 
-// Registration Routes...
-$this->get('register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register.client');
-$this->post('register', 'App\Http\Controllers\Auth\RegisterController@register');
+$this->post('register', 'App\Http\Controllers\Auth\ClientController@register')->name('register.client');

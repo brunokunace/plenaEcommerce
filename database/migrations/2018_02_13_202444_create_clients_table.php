@@ -16,7 +16,7 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('last_name');
+            $table->string('last_name')->nullable();
             $table->string('email');
             $table->string('password')->nullable();
             $table->string('provider_id')->nullable();
@@ -25,10 +25,10 @@ class CreateClientsTable extends Migration
             $table->string('cpf')->nullable();
             $table->string('phone')->nullable();
             $table->string('cell_phone')->nullable();
-            $table->boolean('receive_email', true);
-            $table->boolean('receive_sms', true);
+            $table->boolean('receive_email')->default(true);
+            $table->boolean('receive_sms')->default(true);
             $table->integer('sou_barato')->nullable();
-            $table->boolean('active', true);
+            $table->boolean('active')->default(true);
             $table->rememberToken();
             $table->timestamps();
         });
