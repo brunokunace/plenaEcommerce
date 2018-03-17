@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Common\Repository\Repository;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -57,5 +58,11 @@ class LoginController extends Controller
         }
 
         return redirect()->back()->withInput($request->only('email', 'remember'));
+    }
+
+    protected function logout(Request $request)
+    {
+        Auth::guard('user')->logout();
+        return redirect($this->redirectTo);
     }
 }
