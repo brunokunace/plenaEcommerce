@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
 
 class ClientController extends Controller
@@ -71,5 +72,11 @@ class ClientController extends Controller
             Auth::login($user, true);
             return redirect($this->redirectTo);
         }
+    }
+
+    protected function logout(Request $request)
+    {
+        Auth::guard('clients')->logout();
+        return redirect($this->redirectTo);
     }
 }

@@ -27,46 +27,60 @@
                             <span>Entrar/Cadastrar</span>
                         @endif
                     </a>
-                    <div class="mini-menu-user">
-                        <ul>
-                            <li>
-                                <a href="meus-pedidos.html" title="Meus Pedidos">
-                                    <i class="fa fa-truck" aria-hidden="true"></i>
-                                    <span>Meus<br>Pedidos</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="meus-enderecos.html" title="Meus Endereços">
-                                    <i class="fa fa-home" aria-hidden="true"></i>
-                                    <span>Meus<br>Endereços</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="dados-pessoais.html" title="Dados Pessoais">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                                    <span>Dados<br>Pessoais</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="dados-cadastrais.html" title="Dados Cadastrais">
-                                    <i class="fa fa-lock" aria-hidden="true"></i>
-                                    <span>Dados<br>Cadastrais</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="minhas-avaliacoes.html" title="Minhas Avaliações">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <span>Minhas<br>Avaliações</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="meus-vales.html" title="Meus Vales">
-                                    <i class="fa fa-ticket" aria-hidden="true"></i>
-                                    <span>Meus<br>Vales</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    @if (Auth::check())
+                        <div class="mini-menu-user">
+                            <ul>
+                                <li>
+                                    <a href="meus-pedidos.html" title="Meus Pedidos">
+                                        <i class="fa fa-truck" aria-hidden="true"></i>
+                                        <span>Meus<br>Pedidos</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="meus-enderecos.html" title="Meus Endereços">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <span>Meus<br>Endereços</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="dados-pessoais.html" title="Dados Pessoais">
+                                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                        <span>Dados<br>Pessoais</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="dados-cadastrais.html" title="Dados Cadastrais">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                        <span>Dados<br>Cadastrais</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="minhas-avaliacoes.html" title="Minhas Avaliações">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <span>Minhas<br>Avaliações</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="meus-vales.html" title="Meus Vales">
+                                        <i class="fa fa-ticket" aria-hidden="true"></i>
+                                        <span>Meus<br>Vales</span>
+                                    </a>
+                                </li>
+                                <li style="background-color: #6f864b; width: 100%;">
+                                    <form method="post" action="{{ route('logout.client') }}" id="formLogout">
+                                        {{ csrf_field() }}
+                                    <a href="#" title="Logout"
+                                       style="display: inline-flex; padding: 10px;"
+                                       onclick="$('#formLogout').submit()"
+                                    >
+                                        <i class="fa fa-sign-out" aria-hidden="true" style="color: white;"></i>
+                                        <span style="color: white; font-size: 16px; margin: 0;">Logout</span>
+                                    </a>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    @endif
                 </div>
 
                 <div class="mioloTop">
