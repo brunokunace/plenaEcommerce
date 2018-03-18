@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 function copyRecursive($source, $destiny, $mode = 0755)
 {
     $info = pathinfo($destiny);
@@ -19,5 +21,12 @@ if (!function_exists('formatPrice')) {
     function formatPrice($price)
     {
         return 'R$' . number_format((float)$price, 2, ',', '.');
+    }
+}
+
+if (! function_exists('activeMenu')) {
+    function activeMenu($routes)
+    {
+        return in_array(Route::currentRouteName(), explode('|', $routes)) ? 'active' : '';
     }
 }

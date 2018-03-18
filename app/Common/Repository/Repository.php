@@ -89,7 +89,7 @@ abstract class Repository
         }
         $this->model = $model;
 
-        return $this->save($data);
+        return $this->model->update($data);
     }
 
     /**

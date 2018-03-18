@@ -43,13 +43,13 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="dados-pessoais.html" title="Dados Pessoais">
+                                    <a href="{{ route('site.personaldata.index') }}" title="Dados Pessoais">
                                         <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                                         <span>Dados<br>Pessoais</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="dados-cadastrais.html" title="Dados Cadastrais">
+                                    <a href="{{ route('site.registrationdata.index') }}" title="Dados Cadastrais">
                                         <i class="fa fa-lock" aria-hidden="true"></i>
                                         <span>Dados<br>Cadastrais</span>
                                     </a>
