@@ -15,7 +15,7 @@
             </a>
         </li>
         <li>
-            <a href="meus-enderecos.html" title="Meus Endereços">
+            <a href="{{ route('site.myaddresses.index') }}" class="{{ activeMenu('site.myaddresses.index|site.myaddresses.create') }}" title="Meus Endereços">
                 <i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Meus Endereços
             </a>
         </li>

@@ -18,4 +18,5 @@ class DeliveryAddress extends Model
         'name', 'cep', 'street', 'number', 'complement', 'neighborhood',
         'city', 'state', 'reference', 'main'
     ];
+
 }

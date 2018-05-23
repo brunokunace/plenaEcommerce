@@ -7,8 +7,8 @@ use App\Http\Controllers\Site\PersonalDataController;
 
 Router::get('/', HomeController::class)->name('site.home.index');
 Router::get('/product/{id}', ProductController::class)->name('site.product.index');
-
-
+Router::prefix('auth')->group(__DIR__ . '/web/auth/auth.php');
+Router::prefix('authclient')->group(__DIR__ . '/web/auth/authclient.php');
 Router::prefix('')->group(__DIR__ . '/web/domains/cart/cart.php');
 
 Router::middleware('auth:user')->group(function (){
@@ -28,10 +28,10 @@ Router::middleware('auth:clients')->group(function (){
 
     Router::prefix('panel')->group(__DIR__ . '/web/domains/panel/personaldata.php');
     Router::prefix('panel')->group(__DIR__ . '/web/domains/panel/registrationdata.php');
+    Router::prefix('panel')->group(__DIR__ . '/web/domains/panel/myaddresses.php');
 });
 
-Router::prefix('auth')->group(__DIR__ . '/web/auth/auth.php');
-Router::prefix('authclient')->group(__DIR__ . '/web/auth/authclient.php');
+
 
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Common\Controller\ApiController;
+use App\Domains\Product\Model\Category;
 use App\Domains\Product\Repository\Category as Repository;
 use Illuminate\Http\Request;
 

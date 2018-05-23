@@ -11,4 +11,12 @@ class DeliveryAddress extends Repository
     {
         parent::__construct($model);
     }
+
+    function allAddresses($userId)
+    {
+        return $this->model
+            ->where('client_id', $userId)
+            ->get();
+    }
+
 }

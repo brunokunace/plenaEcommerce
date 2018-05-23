@@ -24,7 +24,10 @@ class Model extends EloquentModel
     }
 
     public function fieldsFillable() {
-        return array_diff_key(array_keys($this->properties), $this->guarded);
+        if(!$this->fillable){
+            return array_diff_key(array_keys($this->properties), $this->guarded);
+        }
+        return $this->fillable;
     }
 
     public function getValidation() {
